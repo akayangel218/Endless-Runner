@@ -3,8 +3,8 @@ class Athlete extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
         super(scene, x, y, texture, frame);
         scene.add.existing(this);
-        // track when player moves/jumps
-        // add jumping sfx
+        // track when player moves/jumps here
+        // add jumping sfx here
     }
 
     update() {
@@ -18,7 +18,7 @@ class Athlete extends Phaser.GameObjects.Sprite {
 
         // jump
         if (keySPACE.isDown) {
-            // jump
+            // jump code goes here
         }
     }
 }
