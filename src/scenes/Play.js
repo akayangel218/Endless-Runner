@@ -3,5 +3,10 @@ class Play extends Phaser.Scene {
         super("playScene");
     }
 
+    preload() {
+        
+        // load images
+        this.load.image('hurdle', './assets/hurdle.png');
+    }
 
 }
