@@ -18,7 +18,12 @@ class Athlete extends Phaser.GameObjects.Sprite {
 
         // jump
         if (keySPACE.isDown) {
-            // jump code goes here
+            this.y -= 200;
         }
+    }
+
+    // reset player to ground
+    reset() {
+        this.y += 200;
     }
 }
