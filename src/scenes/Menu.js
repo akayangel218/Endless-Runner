@@ -26,6 +26,12 @@ class Menu extends Phaser.Scene {
 
         // define keys
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+        // game settings
+        game.settings = {
+            hurdleSpeed: 3,
+            //gameTimer: 60000    
+        }
     }
 
     update() {
