@@ -17,14 +17,16 @@ class Athlete extends Phaser.GameObjects.Sprite {
 
         // jump
         if (keySPACE.isDown) {
-            this.y -= 200;
+            while (this.y < 20) {
+                this.y += 10;
+            }
         }
-
-
     }
 
     // reset player to ground
     reset() {
-        this.y += 200;
+        while (this.y > 50) {
+            this.y -= 10;
+        }
     }
 }

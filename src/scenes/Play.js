@@ -7,6 +7,7 @@ class Play extends Phaser.Scene {
 
         // load images
         this.load.image('hurdle', './assets/hurdle.png');
+        this.load.image('hurdle', './assets/spike.png');
     }
 
     create() {
