@@ -14,12 +14,11 @@ class Play extends Phaser.Scene {
         // load images
         this.load.image('athlete', './assets/athlete.png');
         this.load.image('hurdle', './assets/hurdle.png');
-        this.load.image('hurdle', './assets/spike.png');
+        this.load.image('spike', './assets/spike.png');
     }
 
     create() {
-        //this.add.text(20, 20, 'test');
-        let obstacles = [];
+
         this.physics.world.gravity.y = 300;
         //place tile sprite
         this.track = this.add.tileSprite(0, 0, game.config.width, game.config.height, 'track').setOrigin(0, 0);
@@ -29,9 +28,7 @@ class Play extends Phaser.Scene {
 
         // add hurdles
         //this.hurdle01 = new Hurdle(this, game.config.height - borderUISize * 5, borderUISize * 4, 'hurdle', 0, 30).setScale(.3, .15).setOrigin(0, 0);
-        //this.hurdle01.setScale(.3, .15);
-        //this.hurdle02 = new Hurdle(this, game.config.height - borderUISize * 3, borderUISize * 5 + borderPadding * 2, 'hurdle', 0, 20).setOrigin(0, 0);
-        //this.hurdle02.setScale(.3);
+
 
         // add player
         this.p1athlete = new Athlete(this, game.config.width / 2, game.config.height - borderUISize - 30, 'athlete').setOrigin(0.5, 0);
@@ -78,13 +75,17 @@ class Play extends Phaser.Scene {
             //this.hurdle03.update();
             this.track.tilePositionY -= 6;
             if (1 == Phaser.Math.RND.integerInRange(1, 500)) {
-                let obs = this.physics.add.sprite(game.config.height - borderUISize * 5, borderUISize, 'hurdle').setScale(.3, .15).setOrigin(0);
+                let obs = this.physics.add.sprite(game.config.height - borderUISize * 5, borderUISize, obstacles[Phaser.Math.RND.integerInRange(0, 1)]).setScale(.3, .15).setOrigin(0);
                 //obs.y += 20;
                 //obs.body.setAllowGravity(false).setVelocityY -= 20;
                 //this.obstacles.push(obs);
-                //console.log('obstacle!');
+                console.log('right lane');
                 // add hurdles
                 //let obs = new Hurdle(this, game.config.height - borderUISize * 5, borderUISize * 4, 'hurdle', 0, 30).setScale(.3, .15).setOrigin(0, 0);
+            }
+            if (1 == Phaser.Math.RND.integerInRange(1, 500)) {
+                let obs = this.physics.add.sprite(game.config.height - borderUISize * 10.5, borderUISize, obstacles[Phaser.Math.RND.integerInRange(0, 1)]).setScale(.3, .15).setOrigin(0);
+                console.log('left lane');
             }
             //this.obs.update();
         }

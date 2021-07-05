@@ -23,3 +23,6 @@ let borderPadding = borderUISize / 3;
 
 // reserve keyboard vars
 let keyLEFT, keyRIGHT, keySPACE;
+
+// declare arrays
+let obstacles = ["hurdle", "spike"];
