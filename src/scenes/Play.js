@@ -75,7 +75,13 @@ class Play extends Phaser.Scene {
             //this.hurdle03.update();
             this.track.tilePositionY -= 6;
             if (10 == Phaser.Math.RND.integerInRange(1, 500)) {
-                let obs = this.physics.add.sprite(game.config.height - borderUISize * 5, borderUISize, obstacles[Phaser.Math.RND.integerInRange(0, 1)]).setScale(.3, .1).setOrigin(0);
+                let temp = Phaser.Math.RND.integerInRange(0, 1);
+                if (temp == 1) {
+                    tempScale = .4;
+                } else {
+                    tempScale = .3;
+                }
+                let obs = this.physics.add.sprite(game.config.height - borderUISize * 5, borderUISize, obstacles[temp]).setScale(tempScale, .1).setOrigin(0);
                 this.p1Score += 10;
                 this.scoreLeft.text = this.p1Score;
                 //obs.y += 20;
@@ -87,7 +93,13 @@ class Play extends Phaser.Scene {
 
             }
             if (20 == Phaser.Math.RND.integerInRange(1, 500)) {
-                let obs = this.physics.add.sprite(game.config.height - borderUISize * 10.5, borderUISize, obstacles[Phaser.Math.RND.integerInRange(0, 1)]).setScale(.3, .1).setOrigin(0);
+                let temp = Phaser.Math.RND.integerInRange(0, 1);
+                if (temp == 1) {
+                    tempScale = .4;
+                } else {
+                    tempScale = .3;
+                }
+                let obs = this.physics.add.sprite(game.config.height - borderUISize * 10.5, borderUISize, obstacles[temp]).setScale(tempScale, .1).setOrigin(0);
                 console.log('left lane');
                 this.p1Score += 10;
                 this.scoreLeft.text = this.p1Score;
