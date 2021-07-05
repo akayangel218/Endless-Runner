@@ -9,7 +9,7 @@ class Play extends Phaser.Scene {
         this.load.audio('muzik', './assets/title_bounce.wav');
 
         // load bg tile sprite
-        this.load.image('track', './assets/background.png');
+        this.load.image('track', './assets/straightBG.png');
 
         // load images
         this.load.image('athlete', './assets/athlete.png');
@@ -27,8 +27,8 @@ class Play extends Phaser.Scene {
         this.add.rectangle(0, 0, game.config.width, borderUISize * 2, 0x0000FF).setOrigin(0, 0);
 
         // add hurdles
-        this.hurdle01 = new Hurdle(this, game.config.height - borderUISize * 4, borderUISize * 4, 'hurdle', 0, 30).setOrigin(0, 0);
-        this.hurdle01.setScale(.15);
+        this.hurdle01 = new Hurdle(this, game.config.height - borderUISize * 5, borderUISize * 4, 'hurdle', 0, 30).setOrigin(0, 0);
+        this.hurdle01.setScale(.3, .15);
         //this.hurdle02 = new Hurdle(this, game.config.height - borderUISize * 3, borderUISize * 5 + borderPadding * 2, 'hurdle', 0, 20).setOrigin(0, 0);
         //this.hurdle02.setScale(.3);
 
