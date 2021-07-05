@@ -79,7 +79,7 @@ class Play extends Phaser.Scene {
                 if (temp == 1) {
                     tempScale = .4;
                 } else {
-                    tempScale = .3;
+                    tempScale = .315;
                 }
                 let obs = this.physics.add.sprite(game.config.height - borderUISize * 5, borderUISize, obstacles[temp]).setScale(tempScale, .1).setOrigin(0);
                 this.p1Score += 10;
@@ -97,7 +97,7 @@ class Play extends Phaser.Scene {
                 if (temp == 1) {
                     tempScale = .4;
                 } else {
-                    tempScale = .3;
+                    tempScale = .315;
                 }
                 let obs = this.physics.add.sprite(game.config.height - borderUISize * 10.5, borderUISize, obstacles[temp]).setScale(tempScale, .1).setOrigin(0);
                 console.log('left lane');
