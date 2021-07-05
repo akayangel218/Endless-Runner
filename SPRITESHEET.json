@@ -1,0 +1,104 @@
+{
+	"textures": [
+		{
+			"image": "SPRITESHEET.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 111,
+				"h": 127
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "man1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 0,
+						"w": 35,
+						"h": 64
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 35,
+						"h": 64
+					}
+				},
+				{
+					"filename": "man4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 0,
+						"w": 34,
+						"h": 59
+					},
+					"frame": {
+						"x": 1,
+						"y": 67,
+						"w": 34,
+						"h": 59
+					}
+				},
+				{
+					"filename": "man2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 0,
+						"w": 35,
+						"h": 64
+					},
+					"frame": {
+						"x": 38,
+						"y": 1,
+						"w": 35,
+						"h": 64
+					}
+				},
+				{
+					"filename": "man3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 0,
+						"w": 35,
+						"h": 64
+					},
+					"frame": {
+						"x": 75,
+						"y": 1,
+						"w": 35,
+						"h": 64
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:c7e746d0f900009125a9940d4b053276:0bc7de3853712db4ac0ead36f0c3122e:5ccb687748d0a1d4deb125e391f47bff$"
+	}
+}
