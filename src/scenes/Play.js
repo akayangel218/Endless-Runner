@@ -14,7 +14,7 @@ class Play extends Phaser.Scene {
         // load images
         this.load.image('athlete', './assets/athlete.png');
         this.load.image('hurdle', './assets/hurdle.png');
-        this.load.image('spike', './assets/spike.png');
+        this.load.image('spike', './assets/spikeFix.png');
     }
 
     create() {
@@ -74,8 +74,8 @@ class Play extends Phaser.Scene {
             //this.hurdle02.update();
             //this.hurdle03.update();
             this.track.tilePositionY -= 6;
-            if (1 == Phaser.Math.RND.integerInRange(1, 500)) {
-                let obs = this.physics.add.sprite(game.config.height - borderUISize * 5, borderUISize, obstacles[Phaser.Math.RND.integerInRange(0, 1)]).setScale(.3, .15).setOrigin(0);
+            if (10 == Phaser.Math.RND.integerInRange(1, 500)) {
+                let obs = this.physics.add.sprite(game.config.height - borderUISize * 5, borderUISize, obstacles[Phaser.Math.RND.integerInRange(0, 1)]).setScale(.3, .1).setOrigin(0);
                 this.p1Score += 10;
                 this.scoreLeft.text = this.p1Score;
                 //obs.y += 20;
@@ -86,8 +86,8 @@ class Play extends Phaser.Scene {
                 //let obs = new Hurdle(this, game.config.height - borderUISize * 5, borderUISize * 4, 'hurdle', 0, 30).setScale(.3, .15).setOrigin(0, 0);
 
             }
-            if (1 == Phaser.Math.RND.integerInRange(1, 500)) {
-                let obs = this.physics.add.sprite(game.config.height - borderUISize * 10.5, borderUISize, obstacles[Phaser.Math.RND.integerInRange(0, 1)]).setScale(.3, .15).setOrigin(0);
+            if (20 == Phaser.Math.RND.integerInRange(1, 500)) {
+                let obs = this.physics.add.sprite(game.config.height - borderUISize * 10.5, borderUISize, obstacles[Phaser.Math.RND.integerInRange(0, 1)]).setScale(.3, .1).setOrigin(0);
                 console.log('left lane');
                 this.p1Score += 10;
                 this.scoreLeft.text = this.p1Score;
