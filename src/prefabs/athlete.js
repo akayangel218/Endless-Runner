@@ -5,16 +5,15 @@ class Athlete extends Phaser.GameObjects.Sprite {
         scene.add.existing(this);
         // track when player moves/jumps here
         this.moveSpeed = 3;
-        // add jumping sfx here
     }
 
     update() {
         // left/right movement
-        if (keyLEFT.isDown && this.x >= borderUISize + this.width) {
+        if (keyLEFT.isDown) {
             this.x -= moveSpeed;
         } 
         
-        else if (keyRIGHT.isDown && this.x <= game.config.width - borderUISize - this.width) {
+        else if (keyRIGHT.isDown) {
             this.x += this.moveSpeed;
         }
 
