@@ -12,7 +12,6 @@ class Athlete extends Phaser.GameObjects.Sprite {
         if (keyLEFT.isDown) {
             this.x -= moveSpeed;
         } 
-        
         else if (keyRIGHT.isDown) {
             this.x += this.moveSpeed;
         }
