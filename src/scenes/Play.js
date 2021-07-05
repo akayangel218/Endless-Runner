@@ -27,7 +27,7 @@ class Play extends Phaser.Scene {
         this.add.rectangle(0, 0, game.config.width, borderUISize * 2, 0x0000FF).setOrigin(0, 0);
 
         // add hurdles
-        this.hurdle01 = new Hurdle(this, game.config.height - borderUISize * 5, borderUISize * 4, 'hurdle', 0, 30).setScale(.3, .15).setOrigin(0, 0);
+        //this.hurdle01 = new Hurdle(this, game.config.height - borderUISize * 5, borderUISize * 4, 'hurdle', 0, 30).setScale(.3, .15).setOrigin(0, 0);
 
 
         // add player
