@@ -3,8 +3,7 @@ class Athlete extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
         super(scene, x, y, texture, frame);
         scene.add.existing(this);
-        // track when player moves/jumps here
-        // add jumping sfx here
+        this.moveSpeed = 3;           // pixels per frame
     }
 
     update() {
