@@ -3,7 +3,7 @@ class Athlete extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
         super(scene, x, y, texture, frame);
         scene.add.existing(this);
-        this.moveSpeed = 10;     // pixels per frame
+        this.moveSpeed = 6;     // pixels per frame
         this.temp = 0;
     }
 
