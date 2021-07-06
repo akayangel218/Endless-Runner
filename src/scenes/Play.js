@@ -46,8 +46,9 @@ class Play extends Phaser.Scene {
         this.p1Score = 0;
 
         // start music here
-        this.sound.play('muzik');
-        this.sound.setVolume(0.1);
+        music = this.sound.add('muzik');
+        music.play();
+        music.setVolume(0.1);
 
         // display score
         let scoreConfig = {
@@ -72,6 +73,7 @@ class Play extends Phaser.Scene {
         // game over
         if (this.gameOver) {
             this.scene.start("menuScene");
+            music.stop();
         }
 
         if (this.p1athlete.x <= 120 || this.p1athlete.x >= 490) {
