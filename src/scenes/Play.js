@@ -19,7 +19,7 @@ class Play extends Phaser.Scene {
 
     create() {
 
-        this.physics.world.gravity.y = 300;
+        this.physics.world.gravity.y = 450;
         //place tile sprite
         this.track = this.add.tileSprite(0, 0, game.config.width, game.config.height, 'track').setOrigin(0, 0);
 
@@ -31,7 +31,7 @@ class Play extends Phaser.Scene {
 
 
         // add player
-        this.p1athlete = new Athlete(this, game.config.width + 10, game.config.height - borderUISize - 30, 'athlete').setOrigin(0.5, 0);
+        this.p1athlete = new Athlete(this, 315, 400, 'athlete').setOrigin(0.5, 0);
 
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -63,9 +63,19 @@ class Play extends Phaser.Scene {
         }
         this.scoreLeft = this.add.text(20, 15, this.p1Score, scoreConfig);
 
+        // test text location
+        //this.add.text(450, 200, 'location');
     }
 
     update() {
+        // game over
+        if (this.gameOver) {
+            this.scene.start("menuScene");
+        }
+
+        if (this.p1athlete.x <= 120 || this.p1athlete.x >= 490) {
+            this.gameOver = true;
+        }
 
         this.p1athlete.update(); // update p1
         // check key input for restart
@@ -74,7 +84,7 @@ class Play extends Phaser.Scene {
             //this.hurdle02.update();
             //this.hurdle03.update();
             this.track.tilePositionY -= 6;
-            if (10 == Phaser.Math.RND.integerInRange(1, 500)) {
+            if (1 == Phaser.Math.RND.integerInRange(1, 350)) {
                 let temp = Phaser.Math.RND.integerInRange(0, 1);
                 if (temp == 1) {
                     tempScale = .4;
@@ -92,7 +102,7 @@ class Play extends Phaser.Scene {
                 //let obs = new Hurdle(this, game.config.height - borderUISize * 5, borderUISize * 4, 'hurdle', 0, 30).setScale(.3, .15).setOrigin(0, 0);
 
             }
-            if (20 == Phaser.Math.RND.integerInRange(1, 500)) {
+            if (1 == Phaser.Math.RND.integerInRange(1, 350)) {
                 let temp = Phaser.Math.RND.integerInRange(0, 1);
                 if (temp == 1) {
                     tempScale = .4;
