@@ -19,13 +19,13 @@ class Menu extends Phaser.Scene {
         }
 
         // show menu text
-        this.add.text(game.config.width / 2, game.config.height / 2 - borderUISize - borderPadding, 'Endless Meter Dash', menuConfig).setOrigin(0.5);
-        this.add.text(game.config.width / 2, game.config.height / 2, 'Press SPACE to start', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width / 2, game.config.height / 2 - borderUISize - borderPadding, 'Infinite Meter Dash', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width / 2, game.config.height / 2, 'Press S to start', menuConfig).setOrigin(0.5);
         //menuConfig.backgroundColor = '#00FF00';
         //menuConfig.color = '#000';
 
         // define keys
-        keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
 
         // game settings
         game.settings = {
@@ -37,7 +37,7 @@ class Menu extends Phaser.Scene {
     update() {
         //this.scene.start("playScene");
         //console.log("test");
-        if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
+        if (Phaser.Input.Keyboard.JustDown(keyS)) {
             this.scene.start("playScene");
         }
     }

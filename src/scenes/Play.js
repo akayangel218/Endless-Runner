@@ -37,7 +37,7 @@ class Play extends Phaser.Scene {
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACEBAR);
+        keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
         // GAME OVER flag
         this.gameOver = false;
@@ -71,7 +71,9 @@ class Play extends Phaser.Scene {
     update() {
         // game over
         if (this.gameOver) {
-            this.scene.start("menuScene");
+            // stop music
+            this.sound.stopByKey('gme_music');
+            this.scene.start("gameoverScene");
         }
 
         if (this.p1athlete.x <= 120 || this.p1athlete.x >= 490) {

@@ -30,7 +30,7 @@ let borderUISize = game.config.height / 15;
 let borderPadding = borderUISize / 3;
 
 // reserve keyboard vars
-let keyLEFT, keyRIGHT, keySPACE;
+let keyLEFT, keyRIGHT, keySPACE, keyS, keyR, keyM;
 let tempScale = 0;
 
 // declare arrays
