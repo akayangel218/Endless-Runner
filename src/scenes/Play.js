@@ -95,7 +95,7 @@ class Play extends Phaser.Scene {
                 obsArr.push(obs);
                 this.p1Score += 10;
                 this.scoreLeft.text = this.p1Score;
-                console.log('right lane');
+                //console.log('right lane');
 
 
             }
@@ -111,13 +111,13 @@ class Play extends Phaser.Scene {
                 obsArr.push(obs);
                 this.p1Score += 10;
                 this.scoreLeft.text = this.p1Score;
-                console.log('left lane');
+                //console.log('left lane');
             }
             //this.obs.update();
 
             // check for collisions
             this.physics.add.collider(this.p1athlete, obsArr, (p, e) => {
-                console.log('collided ', e);
+                //console.log('collided ', e);
                 this.gameOver = true;
             });
 
