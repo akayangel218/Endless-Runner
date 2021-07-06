@@ -33,6 +33,7 @@ class Play extends Phaser.Scene {
         // add player
         this.p1athlete = new Athlete(this, 315, 400, 'athlete').setOrigin(0.5, 0);
 
+
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
@@ -80,10 +81,9 @@ class Play extends Phaser.Scene {
         this.p1athlete.update(); // update p1
         // check key input for restart
         if (!this.gameOver) {
-            //this.hurdle01.update(); // update spaceship (x3)
-            //this.hurdle02.update();
-            //this.hurdle03.update();
+            // track vertical movement
             this.track.tilePositionY -= 6;
+            // random obstacle right lane
             if (1 == Phaser.Math.RND.integerInRange(1, 350)) {
                 let temp = Phaser.Math.RND.integerInRange(0, 1);
                 if (temp == 1) {
@@ -92,16 +92,14 @@ class Play extends Phaser.Scene {
                     tempScale = .315;
                 }
                 let obs = this.physics.add.sprite(game.config.height - borderUISize * 5, borderUISize, obstacles[temp]).setScale(tempScale, .1).setOrigin(0);
+                obsArr.push(obs);
                 this.p1Score += 10;
                 this.scoreLeft.text = this.p1Score;
-                //obs.y += 20;
-                //obs.body.setAllowGravity(false).setY -= 20;
-                //this.obstacles.push(obs);
                 console.log('right lane');
-                // add hurdles
-                //let obs = new Hurdle(this, game.config.height - borderUISize * 5, borderUISize * 4, 'hurdle', 0, 30).setScale(.3, .15).setOrigin(0, 0);
+
 
             }
+            // random obstacle left lane
             if (1 == Phaser.Math.RND.integerInRange(1, 350)) {
                 let temp = Phaser.Math.RND.integerInRange(0, 1);
                 if (temp == 1) {
@@ -110,11 +108,19 @@ class Play extends Phaser.Scene {
                     tempScale = .315;
                 }
                 let obs = this.physics.add.sprite(game.config.height - borderUISize * 10.5, borderUISize, obstacles[temp]).setScale(tempScale, .1).setOrigin(0);
-                console.log('left lane');
+                obsArr.push(obs);
                 this.p1Score += 10;
                 this.scoreLeft.text = this.p1Score;
+                console.log('left lane');
             }
             //this.obs.update();
+
+            // check for collisions
+            this.physics.add.collider(this.p1athlete, obsArr, (p, e) => {
+                console.log('collided ', e);
+                this.gameOver = true;
+            });
+
         }
     }
 }

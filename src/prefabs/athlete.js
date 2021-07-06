@@ -3,7 +3,9 @@ class Athlete extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
         super(scene, x, y, texture, frame);
         scene.add.existing(this);
-        this.moveSpeed = 6;     // pixels per frame
+        scene.physics.add.existing(this);
+        this.body.setAllowGravity(false);
+        this.moveSpeed = 6; // pixels per frame
         this.temp = 0;
     }
 
@@ -11,8 +13,7 @@ class Athlete extends Phaser.GameObjects.Sprite {
         // left/right movement
         if (keyLEFT.isDown) {
             this.x -= this.moveSpeed;
-        } 
-        else if (keyRIGHT.isDown) {
+        } else if (keyRIGHT.isDown) {
             this.x += this.moveSpeed;
         }
 

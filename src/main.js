@@ -35,3 +35,4 @@ let tempScale = 0;
 
 // declare arrays
 let obstacles = ["hurdle", "spike"];
+let obsArr = [];
