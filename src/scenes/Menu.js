@@ -3,6 +3,7 @@ class Menu extends Phaser.Scene {
         super("menuScene");
     }
 
+
     create() {
         // menu text configuration
         let menuConfig = {
