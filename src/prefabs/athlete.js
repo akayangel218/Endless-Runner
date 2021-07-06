@@ -4,6 +4,7 @@ class Athlete extends Phaser.GameObjects.Sprite {
         super(scene, x, y, texture, frame);
         scene.add.existing(this);
         this.moveSpeed = 3;     // pixels per frame
+        this.temp = 0;
     }
 
     update() {
@@ -17,16 +18,13 @@ class Athlete extends Phaser.GameObjects.Sprite {
 
         // jump
         if (keySPACE.isDown) {
-            while (this.y < 20) {
-                this.y += 10;
-            }
+            this.temp = this.y;
+            this.y = -20;
         }
     }
 
     // reset player to ground
     reset() {
-        while (this.y > 50) {
-            this.y -= 10;
-        }
+        this.y = this.temp;
     }
 }

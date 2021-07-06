@@ -31,7 +31,7 @@ class Play extends Phaser.Scene {
 
 
         // add player
-        this.p1athlete = new Athlete(this, game.config.width / 2, game.config.height - borderUISize - 30, 'athlete').setOrigin(0.5, 0);
+        this.p1athlete = new Athlete(this, (game.config.width / 2) + 20, game.config.height - borderUISize - 30, 'athlete').setOrigin(0.5, 0);
 
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
