@@ -1,3 +1,11 @@
+/* 
+Kidüs Michael & Mateen Aminian: Programming
+Ethan Case & Ashwin Gupta: Art & Design
+Title: Infinite Metre Run
+Date Completed: 6 July, 2021
+Theme was our idea and all of the images are either created from scratch or royalty free
+*/
+
 let config = {
     type: Phaser.CANVAS,
     width: 640,
