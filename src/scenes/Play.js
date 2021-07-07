@@ -73,7 +73,6 @@ class Play extends Phaser.Scene {
     update() {
         // game over
         if (this.gameOver) {
-            console.log("GO");
             music.stop();
             this.scene.start("gameoverScene");
         }
