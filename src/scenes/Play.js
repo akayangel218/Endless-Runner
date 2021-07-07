@@ -123,6 +123,7 @@ class Play extends Phaser.Scene {
             // check for collisions
             this.physics.add.collider(this.p1athlete, obsArr, (p, e) => {
                 //console.log('collided ', e);
+                console.log("BOH");
                 this.gameOver = true;
             });
 
