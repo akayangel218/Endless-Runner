@@ -74,11 +74,10 @@ class Play extends Phaser.Scene {
         // game over
         if (this.gameOver) {
             music.stop();
-            this.scene.start("gameoverScene");
+            this.scene.start("menuScene");
         }
 
         if ((this.p1athlete.x <= 120 || this.p1athlete.x >= 490) && !(keyLEFT.isDown)) {
-            console.log("AOH");
             this.gameOver = true;
         }
 
@@ -122,7 +121,6 @@ class Play extends Phaser.Scene {
             // check for collisions
             this.physics.add.collider(this.p1athlete, obsArr, (p, e) => {
                 //console.log('collided ', e);
-                console.log("BOH");
                 this.gameOver = true;
             });
 
