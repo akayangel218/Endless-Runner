@@ -76,7 +76,7 @@ class Play extends Phaser.Scene {
             this.scene.start("gameoverScene");
         }
 
-        if (this.p1athlete.x <= 120 || this.p1athlete.x >= 490) {
+        if ((this.p1athlete.x <= 120 || this.p1athlete.x >= 490) && !(keyLEFT.isDown)) {
             this.gameOver = true;
         }
 
