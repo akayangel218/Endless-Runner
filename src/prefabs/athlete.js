@@ -23,13 +23,33 @@ class Athlete extends Phaser.GameObjects.Sprite {
         if (keySPACE.isDown) {
             this.temp = this.y;
             this.y -= 20;
+            this.body.enable = false;
+            if (this.y <= 300) {
+                this.y = 300;
+            }
+            this.body.setAllowGravity(true);
+        } else if (keySPACE.isUp) {
+            //this.body.setAllowGravity(true);
+            //this.body.enable = true;
+            this.reset();
         }
+
+        if (this.y < 400) {
+            this.body.enable = false;
+        }
+        if (this.y == 400) {
+            //this.reset();
+            this.body.setAllowGravity(false);
+            this.body.enable = true;
+        }
+        //console.log(this.y); = 400 at start
     }
 
     // reset player to ground
     reset() {
-        if(this.y != this.temp) {
-            this.y += 20;
+        if (this.y != 400) {
+            this.y += 1;
+            this.body.enable = false;
         }
     }
 }

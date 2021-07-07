@@ -103,7 +103,7 @@ class Play extends Phaser.Scene {
 
             }
             // random obstacle left lane
-            if (1 == Phaser.Math.RND.integerInRange(1, 500)) {
+            if (1 == Phaser.Math.RND.integerInRange(1, 750)) {
                 let temp = Phaser.Math.RND.integerInRange(0, 1);
                 if (temp == 1) {
                     tempScale = .4;
@@ -119,10 +119,13 @@ class Play extends Phaser.Scene {
             //this.obs.update();
 
             // check for collisions
+
             this.physics.add.collider(this.p1athlete, obsArr, (p, e) => {
                 //console.log('collided ', e);
                 this.gameOver = true;
             });
+
+
 
         }
     }
