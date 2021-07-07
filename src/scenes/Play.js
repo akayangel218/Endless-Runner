@@ -103,7 +103,7 @@ class Play extends Phaser.Scene {
 
             }
             // random obstacle left lane
-            if (1 == Phaser.Math.RND.integerInRange(1, 750)) {
+            if (1 == Phaser.Math.RND.integerInRange(1, 500)) {
                 let temp = Phaser.Math.RND.integerInRange(0, 1);
                 if (temp == 1) {
                     tempScale = .4;

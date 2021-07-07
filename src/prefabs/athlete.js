@@ -8,6 +8,7 @@ class Athlete extends Phaser.GameObjects.Sprite {
         this.body.immovable = true;
         this.body.setSize(20, 20, 20, 20);
         this.moveSpeed = 6; // pixels per frame
+        this.setDepth(10);
         this.temp = 0;
     }
 
@@ -48,7 +49,7 @@ class Athlete extends Phaser.GameObjects.Sprite {
     // reset player to ground
     reset() {
         if (this.y != 400) {
-            this.y += 1;
+            this.y += 2;
             this.body.enable = false;
         }
     }
